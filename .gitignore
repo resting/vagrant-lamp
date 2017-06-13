@@ -2,7 +2,8 @@
 .vagrant/
 
 # Log files (if you are creating logs in debug mode, uncomment this)
-# *.logs
+*.logs
+*.log
 
 # General
 *.DS_Store
@@ -10,7 +11,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
