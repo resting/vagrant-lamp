@@ -1,5 +1,6 @@
 # General
 .vagrant/
+data/
 
 # Log files (if you are creating logs in debug mode, uncomment this)
 *.logs
@@ -32,3 +33,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

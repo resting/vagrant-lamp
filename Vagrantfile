@@ -72,9 +72,12 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
+    sudo apt-get update
     sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
     sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-    apt-get install -y apache2 mysql-server php7.0 php7.0-bcmath php7.0-mcrypt
+    sudo apt-get install -y apache2 mysql-server php libapache2-mod-php php-bcmath php-mcrypt php-mysql
+    a2enmod rewrite
+    sudo service apache2 restart
+    /vagrant/update-mysqld.cnf.sh
   SHELL
 end
